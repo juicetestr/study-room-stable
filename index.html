@@ -1,10 +1,29 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>study-app</title>
+    <title>Aula Studio ✨</title>
+
+    <link rel="manifest" href="/manifest.json" />
+
+    <link rel="apple-touch-icon" href="/logo192.jpg" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/logo512.png" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Aula Studio">
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('Service Worker Active!'))
+            .catch(err => console.log('SW registration failed: ', err));
+        });
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
